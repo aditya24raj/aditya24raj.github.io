@@ -15,7 +15,7 @@ function calculate()
     var area = Number((area).toFixed(2))
 
     // circumference or area is either 0 or some other number
-    if ((circumference || circumference == 0) && (area || area === 0))
+    if ((circumference || circumference === 0) && (area || area === 0))
     {
         document.getElementById("circumference").value = circumference;
         document.getElementById("area").value = area;

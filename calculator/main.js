@@ -4,7 +4,7 @@ function calculate(myEvent)
     var secondValue = parseFloat(document.getElementById("secondValue").value);
 
     // first and second values are 0 or other number
-    if ((firstValue || firstValue == 0) && (secondValue || secondValue == 0) )
+    if ((firstValue || firstValue === 0) && (secondValue || secondValue === 0) )
     {
         var clickedButtonId = myEvent.target.id;
         var finalResultField = document.getElementById("finalResult");
