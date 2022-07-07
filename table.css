@@ -10,7 +10,6 @@ main {
     background-color: #21211f;
 	padding: 10px;
 	border-radius: 10px;
-    max-width: 500px;
     text-align: center;
     margin: 0 auto;
 }
@@ -26,7 +25,6 @@ th {
 
 th, td {
     padding-right: 30px;
-    width: 50%;
 }
 
 a {
