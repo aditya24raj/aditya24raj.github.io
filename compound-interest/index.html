@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Compound Interest</title>
+        <link rel="stylesheet" href="../style/styles.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Compound Inerest</h1>
+            <p>// Final Amount = Principal X (1 + Rate / N)<sup>N x Time</sup></p>
+            <p>// Where N = number of times interest applied per time period</p>
+        </header>
+        <main>
+            <section id="calculation">
+                <label>Principal Amount<br>
+                    <input id="principal" type="number" placeholder="Principal Amount"><br>
+                </label>
+                
+                <label>
+                    Interest Rate<br>
+                    <input id="rate" type="number" placeholder="Interest Rate"><br>
+                </label>
+                
+                <label>
+                    Time<br>
+                    <input id="time" type="number" placeholder="Time (in years)"><br>
+                </label>
+    
+                <label>
+                    N<br>
+                    <input id="N" type="number" placeholder="N"><br>
+                </label>
+
+                <hr><br>
+    
+                <label>
+                    Final Amount<br>
+                    <input id="amount" type="number" placeholder="Final Amount" disabled><br>
+                </label>
+    
+                <button onclick="compoundInterest()">Calculate</button>
+
+            </section>
+
+            <section id="nav">
+                <p>Other projects:
+                    <a href="../square/index.html" target="_blank">Square</a>
+                    <a href="../rectangle/index.html" target="_blank">Rectangle</a>
+                    <a href="../circle/index.html" target="_blank">Circle</a>
+                    <a href="../cylinder/index.html" target="_blank">Cylinder</a>
+                    <a href="../simple-interest/index.html" target="_blank">Simple-Interest</a>
+                    <!--<a href="../compound-interest/index.html" target="_blank">Compound-Interest</a>-->
+                </p> 
+            </section>
+
+        </main>
+    </body>
+</html>
