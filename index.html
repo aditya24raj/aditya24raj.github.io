@@ -2,7 +2,10 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="table.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link rel="stylesheet" href="table.css">-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
 
     <body>
@@ -11,13 +14,15 @@
         </header>
 
         <main>
-            <table>
+            <table class="table table-hover">
                 <!--table header row, project name is turned into link itself-->
-                <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col">Project</th>
-                    <th scope="col">Link</th>
-                </tr>
+                <thead class="bg-warning">
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
 
                 <!--table data, with date and project name(which is link to project website too)-->
                 <tr>
