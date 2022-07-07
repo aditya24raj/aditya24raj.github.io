@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mirketa Exercises : Hello Mirketa!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="main.js"></script>
+</head>
+
+  <body class="bg-dark text-light mx-2 text-left">
+    <header>
+      <!--breadcrumb to home-->
+      <p class="display-3"><a href="../index.html">Home</a> &gt; Hello Mirketa!</p>
+      <!--hint about what this page does-->
+      <p class="text-muted mt-n1">//Print Hello, Mirkata! in text box</p>
+    </header>
+    
+    <main id="main-content" >
+      <!--disabled input field, shows greetings-->
+      <div class="form-group">
+        <label for="greetings">Greetings</label>
+        <input type="text" class="form-control bg-dark text-light" id="greetings" aria-describedby="greetingHelp" disabled>
+        <small id="greetingHelp" class="form-text text-muted">Click 'Greet' button to say 'Hello Mirketa!'</small>
+      </div><br>
+
+      <!--Greet button to print 'Hello Mirketa' in output field-->
+      <button type="submit" class="btn btn-primary bg-dark mx-1 my-1" onclick="greet()">Greet</button>
+
+    </main>
+
+  </body>
+</html>

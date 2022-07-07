@@ -16,16 +16,17 @@ function calculate()
     // handle floating-point imprecision
     var lateralArea = Number((lateralArea).toFixed(2));
 
-    if (volume && lateralArea)
+    if ((volume || volume === 0) && (lateralArea || lateralArea === 0))
     {
         document.getElementById("volume").value = volume;
-        document.getElementById("lateral-area").value = lateralArea;
-        return;
+        document.getElementById("lateralArea").value = lateralArea;
+        return 0;
     }
 
-    document.getElementById("volume").value = volume;
-    document.getElementById("lateral-area").value = lateralArea;
+    document.getElementById("volume").value = null;
+    document.getElementById("lateralArea").value = null;
     alert("No values or bad values provided. try again!")
+    return 1;
     
 
     //console.log(volume);

@@ -1,42 +1,52 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <title>Rectangle</title>
-        <link rel="stylesheet" href="../style/styles.css">
-        <script src="main.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <header>
-            <h1><a href="../index.html">Home</a>&gt;Rectangle</h1>
-            <p>// Perimeter = 2 x (length + width)</p>
-            <p>// Area = length x width<sup>2</sup></p>
-        </header>
-        <main>
-            <section id="calculation">
-                <label>Length<br>
-                    <input id="length" type="number" placeholder="Length of Rectangle"><br>
-                </label>
-    
-                <label>Width<br>
-                    <input id="width" type="number" placeholder="width of Rectangle"><br>
-                </label>
-                
-                <hr><br>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mirketa Exercises : Rectangle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="main.js" defer></script>
+</head>
 
-                <label>
-                    Perimeter<br>
-                    <input id="perimeter" type="number" placeholder="Perimeter" disabled><br>
-                </label>
+  <body class="bg-dark text-light mx-2 text-left">
+    <header>
+      <!--breadcrumb to home-->
+      <p class="display-3"><a href="../index.html">Home</a> &gt; Rectangle</p>
+      <!--hint about what this page does-->
+      <p class="text-muted mt-n1">//Perimeter = 2 x (length + width)</p>
+      <p class="text-muted mt-n1">//Area = length x width</p>
+    </header>
     
-                <label>
-                    Area<br>
-                    <input id="area" type="number" placeholder="Area" disabled><br>
-                </label>
-    
-                <button onclick="calculate()">Calculate</button>
-            </section>
-        </main>
-    </body>
+    <main id="main-content" >
+        <!--input fields for getting length and breadth of Rectangle-->
+        <div class="form-group">
+            <label for="length">Length</label>
+            <input autocomplete="off" autofocus type="number" class="form-control bg-dark text-light" id="length">
+        </div><br>
+        
+        <div class="form-group">
+          <label for="breadth">breadth</label>
+          <input type="number" class="form-control bg-dark text-light" id="breadth">
+      </div><br>
+
+        <hr><br>
+
+        <!--disabled input field, shows perimeter-->
+        <div class="form-group">
+            <label for="perimeter">Perimeter</label>
+            <input type="number" class="form-control bg-dark text-light" id="perimeter" disabled>
+        </div><br>
+
+        <!--disabled input field, shows area-->
+        <div class="form-group">
+          <label for="area">Area</label>
+          <input type="number" class="form-control bg-dark text-light" id="area" disabled>
+      </div><br>
+
+        <!--button to calculate perimeter and area-->
+        <button type="submit" class="btn btn-primary bg-dark mx-1 my-1" id="calculate" onclick="calculate()">Calculate</button>
+    </main>
+
+  </body>
 </html>

@@ -14,17 +14,17 @@ function calculate()
     // handle floating-point imprecision
     var area = Number((area).toFixed(2))
 
-    if (perimeter && area)
+    if ((perimeter || perimeter === 0) && (area || area === 0))
     {
         document.getElementById("perimeter").value = perimeter;
         document.getElementById("area").value = area;
-        return;
+        return 0;
     }
 
-    document.getElementById("perimeter").value = perimeter;
-    document.getElementById("area").value = area;
+    document.getElementById("perimeter").value = null;
+    document.getElementById("area").value = null;
     alert("No values or bad values provided. try again!")
-    
+    return 1;
 
     //console.log(perimeter);
     //console.log(area);

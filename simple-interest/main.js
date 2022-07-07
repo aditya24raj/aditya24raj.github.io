@@ -1,7 +1,7 @@
-function simpleInterest()
+function calculate()
 {
     var principalAmount = parseFloat(document.getElementById("principal").value);
-    var annualRate = parseFloat(document.getElementById("annual-rate").value);
+    var annualRate = parseFloat(document.getElementById("annualRate").value);
     var time = parseFloat(document.getElementById("time").value);
     
     //console.log(principalAmount+1);
@@ -12,12 +12,13 @@ function simpleInterest()
     
     // handle floating-point imprecision
     var finalAmount = Number((finalAmount).toFixed(2))
-    if (finalAmount)
+    if (finalAmount || finalAmount === 0)
     {
-        document.getElementById("amount").value = finalAmount;
+        document.getElementById("finalAmount").value = finalAmount;
         return;
     }
-    document.getElementById("amount").value = finalAmount;
+    // final amount is not a valid number
+    document.getElementById("finalAmount").value = null;
     alert("No values or bad values provided. try again!")
     
 

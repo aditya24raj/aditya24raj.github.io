@@ -1,4 +1,4 @@
-function compoundInterest()
+function calculate()
 {
     var principalAmount = parseFloat(document.getElementById("principal").value);
     var annualRate = parseFloat(document.getElementById("rate").value);
@@ -13,13 +13,14 @@ function compoundInterest()
     // handle floating-point imprecision
     var finalAmount = Number((finalAmount).toFixed(2))
     
-    if (finalAmount)
+    if (finalAmount || finalAmount === 0)
     {
-        document.getElementById("amount").value = finalAmount;
-        return;
+        document.getElementById("finalAmount").value = finalAmount;
+        return 0;
     }
-    document.getElementById("amount").value = finalAmount;
-    alert("No values or bad values provided. try again!")
+    document.getElementById("finalAmount").value = null;
+    alert("No values or bad values provided. try again!");
+    return 1;
     
 
     //console.log(finalAmount);

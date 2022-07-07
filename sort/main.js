@@ -1,4 +1,4 @@
-function sort(sortOrder) {
+function sort(myEvent) {
 
     // get reference to all input fields
     var inputFields = document.querySelectorAll("input");
@@ -20,6 +20,7 @@ function sort(sortOrder) {
 
     // sorting the values array, using selection sort
     // TODO: use bubble sort, for better time complexity when values is already sorted
+    var sortOrder = myEvent.target.id;
     var tempIndex = 0;
     for (var i=0; i<values.length; i++)
     {
