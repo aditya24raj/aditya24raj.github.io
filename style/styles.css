@@ -34,13 +34,13 @@ main {
     font-weight: 400; 
 }
 
-#nav a {
+header h1 a {
     color: #8ab4f8;
     text-decoration: none;
     margin: 0 1px;
 }
 
-#nav a:hover {
+h1 a:hover {
     text-decoration: underline;
 }
 
