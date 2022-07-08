@@ -25,17 +25,22 @@ function generate()
         }
         return 0;
     }
+    // clear previous/wrong values
+    document.getElementById("table_title").innerText = null;
+    document.getElementById("tableOf").value = null;
+    document.getElementById("tableTill").value = null;
+    document.getElementById("table_values").innerHTML = null;
     alert("no value or bad value provided");
     return 1;
 
-}
+} 
 
 function generateString(tableOf, i)
 {
     // all the items and fillers we need to display
     items = [tableOf, "&times;", i, "=", tableOf*i]
 
-    let tds = "<td class='px-1'>";
+    let tds = "<td class='px-1 py-0'>";
     let tde = "</td>";
 
     // string containing all items properly enclosed in tds and tde
