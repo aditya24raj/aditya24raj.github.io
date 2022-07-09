@@ -5,7 +5,7 @@ function generate()
     bootstrapAlertClose();
 
     // get tableOf value
-    let tableOf = parseInt(document.getElementById("tableOf").value);
+    let tableOf = parseFloat(document.getElementById("tableOf").value);
 
     // get tableTill value
     let tableTill = parseInt(document.getElementById("tableTill").value);
@@ -42,7 +42,7 @@ function generate()
 function generateString(tableOf, i)
 {
     // all the items and fillers we need to display
-    items = [tableOf, "&times;", i, "=", tableOf*i]
+    items = [tableOf, "&times;", i, "=", (tableOf*i).toFixed(2)]
 
     let tds = "<td class='px-1 py-0'>";
     let tde = "</td>";
