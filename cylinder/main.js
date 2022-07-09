@@ -1,5 +1,9 @@
 function calculate()
 {
+    // function got called again, possibly with new values
+    // hide previous alerts
+    bootstrapAlertClose();
+
     var radius = parseFloat(document.getElementById("radius").value);
     var height = parseFloat(document.getElementById("height").value);
     
@@ -25,10 +29,39 @@ function calculate()
 
     document.getElementById("volume").value = null;
     document.getElementById("lateralArea").value = null;
-    alert("No values or bad values provided. try again!")
+    bootstrapAlertShow();
     return 1;
     
 
     //console.log(volume);
     //console.log(lateralArea);
+}
+
+
+function bootstrapAlertShow(message="No value or bad value provided")
+{
+    let alertHTML = `
+    <div id="myAlert" class="alert alert-danger alert-dismissible fade show mx-auto my-3" role="alert">
+        ${message}
+        <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `;
+
+    document.getElementById("main-content").innerHTML += alertHTML;
+
+    // move focus to first input element once this alert is close
+    var myAlert = document.getElementById('myAlert')
+    myAlert.addEventListener('closed.bs.alert', function () {
+        document.querySelector("input").focus()
+    })
+}
+
+function bootstrapAlertClose()
+{
+    var alertNode = document.querySelector('.alert');
+    if (alertNode)
+    {
+        alertNode.remove();
+    }
+
 }

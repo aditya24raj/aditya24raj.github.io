@@ -1,5 +1,9 @@
 function sort(myEvent) {
 
+    // function got called again, possibly with new values
+    // hide previous alerts
+    bootstrapAlertClose();
+
     // get reference to all input fields
     var inputFields = document.querySelectorAll("input");
 
@@ -14,8 +18,8 @@ function sort(myEvent) {
             values.push(inputField.value);
             continue;
         }
-        alert("Please enter all values");
-        return;
+        bootstrapAlertShow();
+        return 1;
     }
 
     // sorting the values array, using selection sort
@@ -55,8 +59,35 @@ function sort(myEvent) {
         inputFields[i].value = values[i];
     }
 
+    return 0;
+
 
 }
 
+function bootstrapAlertShow(message="No value or bad value provided")
+{
+    let alertHTML = `
+    <div id="myAlert" class="alert alert-danger alert-dismissible fade show mx-auto my-3" role="alert">
+        ${message}
+        <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `;
 
+    document.getElementById("main-content").innerHTML += alertHTML;
 
+    // move focus to first input element once this alert is close
+    var myAlert = document.getElementById('myAlert')
+    myAlert.addEventListener('closed.bs.alert', function () {
+        document.querySelector("input").focus()
+    })
+}
+
+function bootstrapAlertClose()
+{
+    var alertNode = document.querySelector('.alert');
+    if (alertNode)
+    {
+        alertNode.remove();
+    }
+
+}

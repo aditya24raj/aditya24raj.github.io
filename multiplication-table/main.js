@@ -1,5 +1,9 @@
 function generate()
 {
+    // function got called again, possibly with new values
+    // hide previous alerts
+    bootstrapAlertClose();
+
     // get tableOf value
     let tableOf = parseInt(document.getElementById("tableOf").value);
 
@@ -30,7 +34,7 @@ function generate()
     document.getElementById("tableOf").value = null;
     document.getElementById("tableTill").value = null;
     document.getElementById("table_values").innerHTML = null;
-    alert("no value or bad value provided");
+    bootstrapAlertShow();
     return 1;
 
 } 
@@ -57,5 +61,34 @@ function generateString(tableOf, i)
     finalString = "<tr>" + finalString + "</tr>";
     
     return finalString;
+
+}
+
+
+function bootstrapAlertShow(message="No value or bad value provided")
+{
+    let alertHTML = `
+    <div id="myAlert" class="alert alert-danger alert-dismissible fade show mx-auto my-3" role="alert">
+        ${message}
+        <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `;
+
+    document.getElementById("main-content").innerHTML += alertHTML;
+
+    // move focus to first input element once this alert is close
+    var myAlert = document.getElementById('myAlert')
+    myAlert.addEventListener('closed.bs.alert', function () {
+        document.querySelector("input").focus()
+    })
+}
+
+function bootstrapAlertClose()
+{
+    var alertNode = document.querySelector('.alert');
+    if (alertNode)
+    {
+        alertNode.remove();
+    }
 
 }
