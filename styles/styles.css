@@ -1,14 +1,24 @@
+body {
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
 #main-content {
+    margin: 0 auto !important;
+    text-align: left !important;
     color: white !important;
     background-color: #1a1b1c !important;
     border-radius: 10px !important;
     padding: 20px;
-    max-width: 500px;
+    max-width: fit-content;
+    min-width: 337.5px; 
+
 }
 
 a {
     color: #8ab4f8 !important;
     text-decoration: none !important;
+    padding: 0 2px;
 }
 
 a:hover {
@@ -18,4 +28,5 @@ a:hover {
 
 .mt-n1 {
     margin-top: -10px !important;
+    margin-bottom: 40px !important;
 }
