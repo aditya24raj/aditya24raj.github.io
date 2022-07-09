@@ -42,7 +42,7 @@ function generate()
 function generateString(tableOf, i)
 {
     // all the items and fillers we need to display
-    items = [tableOf, "&times;", i, "=", (tableOf*i).toFixed(2)]
+    items = [tableOf, "&times;", i, "=", parseFloat((tableOf*i).toFixed(2))]
 
     let tds = "<td class='px-1 py-0'>";
     let tde = "</td>";
