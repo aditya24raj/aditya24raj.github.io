@@ -37,7 +37,7 @@ function generate()
     bootstrapAlertShow();
     return 1;
 
-} 
+}
 
 function generateString(tableOf, i)
 {

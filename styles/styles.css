@@ -4,7 +4,7 @@ body {
 }
 
 #main-content {
-    margin: 0 auto !important;
+    margin: 20px auto auto auto !important;
     text-align: left !important;
     color: white !important;
     background-color: #1a1b1c !important;
@@ -27,6 +27,5 @@ a:hover {
 }
 
 .mt-n1 {
-    margin-top: -10px !important;
-    margin-bottom: 40px !important;
+    margin: -10px auto 5px auto !important;
 }
