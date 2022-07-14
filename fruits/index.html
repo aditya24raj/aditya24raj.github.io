@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+	<head>
+		<meta charset='UTF-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Mirketa Exercises : Fruits</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<link rel="stylesheet" href="../styles/styles.css">
+		<script defer src="main.js"></script>
+		<link rel="icon" type="image/png" href="../favicon.png">
+	</head>
+	
+	<body class="bg-dark text-light mx-2 text-left">
+		<header>
+			<!--breadcrumb to home-->
+			<p class="display-3"><a href="../">Home</a> &gt; Fruits</p>
+			<!--hint about what this page does-->
+			<p class="text-muted mt-n1">//Use previous and next buttons to navigate an array</p>
+		</header>
+		
+		<main id="main-content">
+			<!--text field to display fruit name-->
+			<input class='form-control bg-dark text-light' type='text' id='fruit' disabled>
+
+			<!--error message-->
+		    <span id="error-message" style="color: gray;"></span><br><br>
+		
+			<!--buttons to go to previous or next fruit-->
+		    <button type="submit" class="btn btn-primary bg-dark mx-1 my-1" onclick='main(event)'>Previous Fruit</button>
+		    <button type="submit" class="btn btn-primary bg-dark mx-1 my-1" onclick='main(event)'>Next Fruit</button>
+		</main>
+	</body>
+</html>
