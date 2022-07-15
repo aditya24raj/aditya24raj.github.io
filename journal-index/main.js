@@ -33,6 +33,8 @@ journalDetails = {
 
 };
 
+// keep a global reference to iframe as it will be needed multiple times
+myIframe = document.getElementById("my-iframe");
 
 function populateNavbar()
 {
@@ -46,16 +48,33 @@ function populateNavbar()
     }
 }
 
-function showIframe(event)
+// we want to show which name was clicked(by adding a border to it)
+// to implement it we will have to clear this border from previously clicked name
+// so keep last event handy to modify its border
+var lastEvent = null;
+
+function showIframe(currentEvent)
 {
     // find title of button which was pressed
-    var person = event.target.textContent;
+    var person = currentEvent.target.textContent;
+
+    // clear border of last clicked name
+    if (lastEvent)
+    {
+        lastEvent.target.style.border = "none";
+    }
+
+    // apply border to current clicked name
+    currentEvent.target.style.border = "2px dotted #8ab4f8";
+
+    // store current event as last event
+    lastEvent = currentEvent;
     
     // load iframe of this person's journal
-    document.getElementById("my-iframe").innerHTML = `<iframe src="${journalDetails[person]}" style="width: 100%; height: 100vh;"></iframe>`;
+    myIframe.innerHTML = `<iframe src="${journalDetails[person]}" style="width: 100%; height: 100vh;"></iframe>`;
 
     // prevent link from opening
-    event.preventDefault();
+    currentEvent.preventDefault();
 }
 
 // populate navbar on pageload
