@@ -20,7 +20,7 @@ journalDetails = {
     'Prabhakaran': 'https://prabhakaran-mrk.github.io/journal.html',
     'Pratiksha_B_Gaidhane': 'https://pratiksha-mrk.github.io/journal.html',
     'Rahul_R_Nashikkar': 'https://rahul-mrk.github.io/Journal.html',
-    'Ramya H S': 'not/found',
+    'Ramya H S': 'https://ramya-mrk.github.io/journal.html',
     'Rishabh Jain': 'https://rishabh-mrk.github.io/journal.html',
     'Sanjay_B_S': 'https://sanjay-mrk.github.io/journal.html',
     'Shivam_P_Bhankhede': 'https://shivam-mrk.github.io/Journal.html',
