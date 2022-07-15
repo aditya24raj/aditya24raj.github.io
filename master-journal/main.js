@@ -1,7 +1,38 @@
-var journalDetails = {
+journalDetails = {
     'Aditya_Raj': 'https://aditya24raj.github.io/journal/',
-    'Himanshu_K_Tajne': 'https://himanshu-mrk.github.io/Journal.html'
+    'Ajit_N_Ogale': 'https://ajit1-mrk.github.io/Ajit_journal.html',
+    'Ashutosh_P_Hore': 'https://ashutosh-mrk.github.io/Journal.html',
+    'Ashwini_V_Waghale': 'https://programmash.github.io/journal.html',
+    'Ashwini_Dolli': 'https://ashwinisdolli.github.io/journal.html',
+    'Basavaraja_C': 'https://basavaraj-mrk.github.io/Journal.html',
+    'Bharti_C_Rahangdale': 'https://bharti-mrk.github.io/journal.html',
+    'Chetan_A_Tekam': 'https://chetan-mrk.github.io/Journal.html',
+    'Darshak_S_Khode': 'https://darshak-mrk.github.io/journal.html',
+    'Deepika_A_Lohakare': 'https://deepika-mrk.github.io/journal.html',
+    'Ekta_Y_Suryawanshi': 'https://ekta-mrk.github.io/Journal.html',
+    'Himanshu_K_Tajne': 'https://himanshu-mrk.github.io/Journal.html',
+    'Kunal_P_Lambat': 'https://kunal-mrk.github.io/journal.html',
+    'Lokesh_R_Gaidhane': 'https://lokesh-mrk.github.io/Journal.html',
+    'Lucky_R_Rakhunde': 'https://lucky-mrk.github.io/Journal.html',
+    'Mahesh_R_Thakre': 'https://mahesht-mrk.github.io/journal.html',
+    'Neha_A_Upadhyaya': 'https://neha-mrk.github.io/journal.html',
+    'Nithin_E': 'https://nithin-mrk.github.io/Journal.html',
+    'Prabhakaran': 'https://prabhakaran-mrk.github.io/journal.html',
+    'Pratiksha_B_Gaidhane': 'https://pratiksha-mrk.github.io/journal.html',
+    'Rahul_R_Nashikkar': 'https://rahul-mrk.github.io/Journal.html',
+    'Ramya H S': 'not/found',
+    'Rishabh Jain': 'https://rishabh-mrk.github.io/journal.html',
+    'Sanjay_B_S': 'https://sanjay-mrk.github.io/journal.html',
+    'Shivam_P_Bhankhede': 'https://shivam-mrk.github.io/Journal.html',
+    'Shubham_B_Ladase': 'https://shubham-mrk.github.io/Journal.html',
+    'Sneha_T_Malghate': 'https://sneha-mrk.github.io/journal.html',
+    'Suraj_S_Bhoskar': 'https://suraj-mrk.github.io/Journal.html',
+    'Swapnil_D_Pulate': 'https://swapnil-mrk.github.io/journal.html',
+    'Swastik_R_Katre': 'https://swastikkatre.github.io/journal.html',
+    'Swathi_R_Premar': 'https://swathi-mrk.github.io/Journal.html',
+
 };
+
 
 function populateNavbar()
 {
@@ -11,7 +42,7 @@ function populateNavbar()
     {
         // add a button for each person
         // make it call main on click with event
-        myNavbar.innerHTML += `<button type='button' class='btn-link' style="border: 0; background: none; margin-bottom: -15px;" onclick="showIframe(event)">${person}</button><br>`
+        myNavbar.innerHTML += `<a href='${journalDetails[person]}' onclick='showIframe(event)'>${person}</a><br>`
     }
 }
 
@@ -21,12 +52,15 @@ function showIframe(event)
     var person = event.target.textContent;
     
     // load iframe of this person's journal
-    document.getElementById("my-iframe").innerHTML = `<iframe src="${journalDetails[person]}" style="width: 100%; height: 100vh;"></iframe>`
+    document.getElementById("my-iframe").innerHTML = `<iframe src="${journalDetails[person]}" style="width: 100%; height: 100vh;"></iframe>`;
+
+    // prevent link from opening
+    event.preventDefault();
 }
 
 // populate navbar on pageload
 populateNavbar()
 
 // show first person's journal automatically
-document.getElementById("my-iframe").innerHTML = `<iframe src="${journalDetails['Aditya_Raj']}" style="width: 100%; height: 100vh;"></iframe>`
+document.getElementById("my-iframe").innerHTML = `<iframe src="${journalDetails['Aditya_Raj']}" style="width: 100%; height: 100vh;"></iframe>`;
 
