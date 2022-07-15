@@ -1,0 +1,10 @@
+a {
+    color: #8ab4f8 !important;
+    text-decoration: none !important;
+    padding: 0 2px;
+}
+
+a:hover {
+    color: #1a1b1c !important;
+    background-color: #8ab4f8 !important;
+}
