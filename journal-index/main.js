@@ -48,9 +48,9 @@ function populateNavbar()
     }
 }
 
-// we want to show which name was clicked(by adding a border to it)
-// to implement it we will have to clear this border from previously clicked name
-// so keep last event handy to modify its border
+// we want to highlight which name was just clicked, to keep track of where in the index we currently are
+// to implement it we will have to clear this hightlight from previously clicked name
+// so keep last event handy to modify its highlight
 var lastEvent = null;
 
 function showIframe(currentEvent)
@@ -58,14 +58,16 @@ function showIframe(currentEvent)
     // find title of button which was pressed
     var person = currentEvent.target.textContent;
 
-    // clear border of last clicked name
+    // clear highlight of last clicked name
     if (lastEvent)
     {
-        lastEvent.target.style.border = "none";
+        lastEvent.target.style.color = "#8ab4f8";
+        lastEvent.target.style.backgroundColor = "transparent";
     }
 
-    // apply border to current clicked name
-    currentEvent.target.style.border = "2px dotted #8ab4f8";
+    // apply highlight to current clicked name
+    currentEvent.target.style.color = "black";
+    currentEvent.target.style.backgroundColor = "#8ab4f8";
 
     // store current event as last event
     lastEvent = currentEvent;
