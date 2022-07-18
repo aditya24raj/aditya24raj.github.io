@@ -1,6 +1,6 @@
 journalDetails = {
     'Aditya_Raj': 'https://aditya24raj.github.io/journal/',
-    'Ajit_N_Ogale': 'https://ajit1-mrk.github.io/Ajit_journal.html',
+    'Ajit_N_Ogale': 'https://ajit1-mrk.github.io/Ajit_journal',
     'Ashutosh_P_Hore': 'https://ashutosh-mrk.github.io/Journal.html',
     'Ashwini_V_Waghale': 'https://programmash.github.io/Journal.html',
     'Ashwini_Dolli': 'https://ashwinisdolli.github.io/journal.html',
