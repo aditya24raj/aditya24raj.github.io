@@ -1,6 +1,7 @@
 journalDetails = {
     'Aditya_Raj': 'https://aditya24raj.github.io/journal/',
     'Ajit_N_Ogale': 'https://ajit1-mrk.github.io/Ajit_journal',
+    'Anmol_Saxena': 'https://anmol-mrk.github.io/Journal.html',
     'Ashutosh_P_Hore': 'https://ashutosh-mrk.github.io/Journal.html',
     'Ashwini_V_Waghale': 'https://programmash.github.io/Journal.html',
     'Ashwini_Dolli': 'https://ashwinisdolli.github.io/journal.html',
@@ -10,6 +11,7 @@ journalDetails = {
     'Darshak_S_Khode': 'https://darshak-mrk.github.io/journal.html',
     'Deepika_A_Lohakare': 'https://deepika-mrk.github.io/journal.html',
     'Ekta_Y_Suryawanshi': 'https://ekta-mrk.github.io/Journal.html',
+    'Gangavarapu Mahendra': 'https://mahendra-mrk.github.io/Journal.html',
     'Himanshu_K_Tajne': 'https://himanshu-mrk.github.io/Journal.html',
     'Kunal_P_Lambat': 'https://kunal-mrk.github.io/journal.html',
     'Lokesh_R_Gaidhane': 'https://lokesh-mrk.github.io/Journal.html',
