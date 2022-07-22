@@ -11,7 +11,7 @@ journalDetails = {
     'Darshak_S_Khode': 'https://darshak-mrk.github.io/journal.html',
     'Deepika_A_Lohakare': 'https://deepika-mrk.github.io/journal.html',
     'Ekta_Y_Suryawanshi': 'https://ekta-mrk.github.io/Journal.html',
-    'Gangavarapu Mahendra': 'https://mahendra-mrk.github.io/Journal.html',
+    'Gangavarapu_Mahendra': 'https://mahendra-mrk.github.io/Journal.html',
     'Himanshu_K_Tajne': 'https://himanshu-mrk.github.io/Journal.html',
     'Kunal_P_Lambat': 'https://kunal-mrk.github.io/journal.html',
     'Lokesh_R_Gaidhane': 'https://lokesh-mrk.github.io/Journal.html',
