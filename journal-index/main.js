@@ -50,6 +50,9 @@ function populateNavbar()
         // make it call main on click with event
         myNavbar.innerHTML += `<a href='${journalDetails[person]}' onclick='showIframe(event)'>${person}</a><br>`
     }
+
+    myIframe.style.right = '0px';
+    myIframe.style.left = `${document.getElementById("my-sidebar").offsetWidth}px`;
 }
 
 // we want to highlight which name was just clicked, to keep track of where in the index we currently are
