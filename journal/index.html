@@ -3,101 +3,120 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Aditya's Journal</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-		<script src="main.js"></script>
+		
+		<title>Mirketa Exercises : Aditya's Journal</title>
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="../styles/styles.css">
+
+		<link rel="icon" type="image/png" href="../favicon.png">
 	</head>
-	<body class="container">
-		<p class="display-1">Aditya's Journal</p>
-		<div class="table-responsive-sm">
-			<table class="table table-hover table-borderless mt-5">
-				<thead class="bg-success">
-					<tr>
-						<th>Date</th>
-						<th>Notes</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>25th july</td>
-						<td>
-							<li>Worked with 'Approval Process' by emulating a leave-request approval scenario</li>
-							<li>Used flow to track leave-request object and automated submission once a leave-request record is created</li>
-							<li>4 layers of 'Data Security' was discussed, each level offers its own security policies(password policy/login hours/permission sets etc.)</li>
-							<li>i am currently revising the 'Data Security' topic. i have to update journal with brief summary about each layer and their policies.</li>
-						</td>
-					</tr>
-					<tr>
-						<td>22nd july</td>
-						<td>
-							<li>Learnt about publisher layouts in global actions</li>
-							<li>created various automations using workflow, process builder and flows.</li>
-							<li>Each automation tool is slightly different. Flow offers more features than other(create/update records) and has pleasant UI.</li>
-						</td>
-					</tr>
 
-					<tr>
-						<td>21st july</td>
-						<td>
-							<li>Learnt about creating profiles and users and giving/restricting CRUD permissions</li>
-							<li>Used page layouts to show different UI depending on which user is accessing the page</li>
-							<li>Used record types to show different UI even to users with same profile</li>
-							<li>Learnt about modifying list view, filtering it and showing charts</li>
-							<li>Created custom buttons, links and quick actions</li>
-						</td>
-					</tr>
-					
-					<tr>
-						<td>20th july</td>
-						<td>
-							<li>Learnt about difference between Master Detail Relation and Lookup Relation</li>
-							<li>Used concepts of junction objects, i.e. objects to store data relating to two different objects</li>
-							<li>created lots of validation rules and have some assingment related to creating validation rules</li>
-						</td>
-					</tr>
+	<body class="bg-dark text-light mx-2 text-left">
+		<header>
+			<!--breadcrumb to home-->
+			<p class="display-3"><a href="../">Home</a> &gt; Aditya's Journal</p>
+			<!--hint about what this page does-->
+			<p class="text-muted mt-n1">//My journal on SDFC Training</p>
+		</header>
 
-					<tr>
-						<td>19th july</td>
-						<td>
-							<li>Learnt how to use Formula field type</li>
-							<li>Created lots of expressions in formula editor</li>
-							<li>Got assingment to implement some 10-12 questions using formula</li>
-							<li>learnt about lookup and master detail relation</li>
-							<li>learnt to store images in static resources and create global sets</li>
-					</tr>
-					<tr>
-						<td>18th july</td>
-						<td>
-							<li>SalesForce training started with AlmaMate</li>
-							<li>we learnt basics of salesforce</li>
-							<li>created a lightning app, modified its home page, added custom objects and fields</li>
-							<li>have an assingment to create a basic medicine business related lightning app with any 2 objects discussed in session</li>
-					</tr>
-					<tr>
-						<td>15th july</td>
-						<td>
-							<li>Installed JDK, Put it in PATH variable, used javac and java to compile and run java code</li>
-							<li>Udhay made us familiar with running jar files, we ran a tomcat server which was serving a spring boot application. we interacted with it on localhost</li>
-							<li>we also got breifly introduced to postman</li>
-						</td>
-					</tr>
-					<tr>
-						<td>14th july</td>
-						<td>
-							<li>Learnt about HTML tables. Applied bootstrap to it, inserted table data from JS. In free time i even made some responsive tables</li>
-							<li>Udhay told us how JIRA helps to execute Agile workflow, what steps goes into start to end of a project.</li>
-							<li>Learnt basics of VBA. Created JSON from cell data.</li>
-						</td>
-					</tr>
-					<tr>
-						<td>13th july</td>
-						<td>
-							<li>Had a meeting with Rajeev on Agile development method. Learnt about iterative workflow and showing demos early on.</li>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		<main id="main-content">
+			<!--making our tables horizontally scrollable on small devices-->
+			<div class="table-responsive-sm">
+				<!--table containing date, project name and project website-->
+				<table class="table table-borderless text-light">
+					<thead>
+						<tr>
+							<th>Date</th>
+						    <th>Notes</th>
+						</tr>
+					</thead>
+			
+					<tbody>
+						<tr>
+							<td>25th july</td>
+							<td>
+								<li>Worked with 'Approval Process' by emulating a leave-request approval scenario</li>
+								<li>Used flow to track leave-request object and automated submission once a leave-request record is created</li>
+								<li>4 layers of 'Data Security' was discussed, each level offers its own security policies(password policy/login hours/permission sets etc.)</li>
+								<li>i am currently revising the 'Data Security' topic. i have to update journal with brief summary about each layer and their policies.</li>
+							</td>
+						</tr>
+						<tr>
+							<td>22nd july</td>
+							<td>
+								<li>Learnt about publisher layouts in global actions</li>
+								<li>created various automations using workflow, process builder and flows.</li>
+								<li>Each automation tool is slightly different. Flow offers more features than other(create/update records) and has pleasant UI.</li>
+							</td>
+						</tr>
+	
+						<tr>
+							<td>21st july</td>
+							<td>
+								<li>Learnt about creating profiles and users and giving/restricting CRUD permissions</li>
+								<li>Used page layouts to show different UI depending on which user is accessing the page</li>
+								<li>Used record types to show different UI even to users with same profile</li>
+								<li>Learnt about modifying list view, filtering it and showing charts</li>
+								<li>Created custom buttons, links and quick actions</li>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>20th july</td>
+							<td>
+								<li>Learnt about difference between Master Detail Relation and Lookup Relation</li>
+								<li>Used concepts of junction objects, i.e. objects to store data relating to two different objects</li>
+								<li>created lots of validation rules and have some assingment related to creating validation rules</li>
+							</td>
+						</tr>
+	
+						<tr>
+							<td>19th july</td>
+							<td>
+								<li>Learnt how to use Formula field type</li>
+								<li>Created lots of expressions in formula editor</li>
+								<li>Got assingment to implement some 10-12 questions using formula</li>
+								<li>learnt about lookup and master detail relation</li>
+								<li>learnt to store images in static resources and create global sets</li>
+						</tr>
+
+						<tr>
+							<td>18th july</td>
+							<td>
+								<li>SalesForce training started with AlmaMate</li>
+								<li>we learnt basics of salesforce</li>
+								<li>created a lightning app, modified its home page, added custom objects and fields</li>
+								<li>have an assingment to create a basic medicine business related lightning app with any 2 objects discussed in session</li>
+						</tr>
+
+						<tr>
+							<td>15th july</td>
+							<td>
+								<li>Installed JDK, Put it in PATH variable, used javac and java to compile and run java code</li>
+								<li>Udhay made us familiar with running jar files, we ran a tomcat server which was serving a spring boot application. we interacted with it on localhost</li>
+								<li>we also got breifly introduced to postman</li>
+							</td>
+						</tr>
+
+						<tr>
+							<td>14th july</td>
+							<td>
+								<li>Learnt about HTML tables. Applied bootstrap to it, inserted table data from JS. In free time i even made some responsive tables</li>
+								<li>Udhay told us how JIRA helps to execute Agile workflow, what steps goes into start to end of a project.</li>
+								<li>Learnt basics of VBA. Created JSON from cell data.</li>
+							</td>
+						</tr>
+
+						<tr>
+							<td>13th july</td>
+							<td>
+								<li>Had a meeting with Rajeev on Agile development method. Learnt about iterative workflow and showing demos early on.</li>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
 	</body>
 </html>
