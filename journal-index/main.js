@@ -16,14 +16,16 @@ journalDetails = {
     'Lokesh_R_Gaidhane': 'https://lokesh-mrk.github.io/Journal.html',
     'Lucky_R_Rakhunde': 'https://lucky-mrk.github.io/Journal.html',
     'Mahesh_R_Thakre': 'https://mahesht-mrk.github.io/journal.html',
-    'Manoj R Bankar' : 'https://manoj-mrk.github.io/journal.html',
+    'Manoj_R_Bankar' : 'https://manoj-mrk.github.io/journal.html',
     'Neha_A_Upadhyaya': 'https://neha-mrk.github.io/journal.html',
     'Nithin_E': 'https://nithin-mrk.github.io/Journal.html',
+    'Pankaj Nagar' : 'https://pankaj-mrk.github.io/journal.html',
     'Pratiksha_B_Gaidhane': 'https://pratiksha-mrk.github.io/journal.html',
     'Praveen_Birader': 'https://praveen-mrk.github.io/journal.html',
     'Rahul_R_Nashikkar': 'https://rahul-mrk.github.io/Journal.html',
     'Ramya_H_S': 'https://ramya-mrk.github.io/journal.html',
     'Rishabh_Jain': 'https://rishabh-mrk.github.io/journal.html',
+    'Sagili_S_Prasad' : 'https://sivasai-mrk.github.io/journal.html',
     'Sagar_S_Jalageri': 'https://sagar-mrk.github.io/journal.html',
     'Sanjay_B_S': 'https://sanjay-mrk.github.io/journal.html',
     'Shivam_P_Bhankhede': 'https://shivam-mrk.github.io/Journal.html',
@@ -33,6 +35,8 @@ journalDetails = {
     'Swapnil_D_Pulate': 'https://swapnil-mrk.github.io/journal.html',
     'Swastik_R_Katre': 'https://swastikkatre.github.io/journal.html',
     'Swathi_R_Premar': 'https://swathi-mrk.github.io/Journal.html',
+    'Vemparala_V_N_S_Swaroop' : 'https://swaroopvemparala.github.io/journal.html',
+
 
 };
 
