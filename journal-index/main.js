@@ -16,6 +16,7 @@ journalDetails = {
     'Lokesh_R_Gaidhane': 'https://lokesh-mrk.github.io/Journal.html',
     'Lucky_R_Rakhunde': 'https://lucky-mrk.github.io/Journal.html',
     'Mahesh_R_Thakre': 'https://mahesht-mrk.github.io/journal.html',
+    'Manoj R Bankar' : 'https://manoj-mrk.github.io/journal.html',
     'Neha_A_Upadhyaya': 'https://neha-mrk.github.io/journal.html',
     'Nithin_E': 'https://nithin-mrk.github.io/Journal.html',
     'Pratiksha_B_Gaidhane': 'https://pratiksha-mrk.github.io/journal.html',
