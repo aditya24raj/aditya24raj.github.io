@@ -10,6 +10,7 @@ journalDetails = {
     'Chetan_A_Tekam': 'https://chetan-mrk.github.io/Journal.html',
     'Deepika_A_Lohakare': 'https://deepika-mrk.github.io/journal.html',
     'Ekta_Y_Suryawanshi': 'https://ekta-mrk.github.io/Journal.html',
+    'Gujjula_H_Bindu' : 'https://bindugujjula-mrk.github.io/Journal.html',
     'Gangavarapu_Mahendra': 'https://mahendra-mrk.github.io/Journal.html',
     'Himanshu_K_Tajne': 'https://himanshu-mrk.github.io/Journal.html',
     'Kunal_P_Lambat': 'https://kunal-mrk.github.io/journal.html',
