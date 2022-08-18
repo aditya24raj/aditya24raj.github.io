@@ -56,7 +56,7 @@ function populateNavbar()
     {
         // add a button for each person
         // make it call main on click with event
-        myNavbar.innerHTML += `<a href='${journalDetails[person]}' onclick='showIframe(event)'>${serialNum}. ${person}</a><br>`
+        myNavbar.innerHTML += `<a id='${person}' href='${journalDetails[person]}' onclick='showIframe(event)'>${serialNum}. ${person}</a><br>`
         serialNum++;
     }
 
@@ -71,8 +71,8 @@ var lastEvent = null;
 
 function showIframe(currentEvent)
 {
-    // find title of button which was pressed
-    var person = currentEvent.target.textContent;
+    // find id of link which was pressed
+    var person = currentEvent.target.id;
 
     // clear highlight of last clicked name
     if (lastEvent)
