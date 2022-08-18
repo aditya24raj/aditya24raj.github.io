@@ -51,11 +51,13 @@ function populateNavbar()
 {
     // get reference to navbar
     var myNavbar = document.getElementById("my-navbar");
+    var serialNum = 1;
     for (var person in journalDetails)
     {
         // add a button for each person
         // make it call main on click with event
-        myNavbar.innerHTML += `<a href='${journalDetails[person]}' onclick='showIframe(event)'>${person}</a><br>`
+        myNavbar.innerHTML += `<a href='${journalDetails[person]}' onclick='showIframe(event)'>${serialNum}. ${person}</a><br>`
+        serialNum++;
     }
 
     myIframe.style.right = '0px';
