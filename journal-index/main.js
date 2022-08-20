@@ -1,4 +1,5 @@
 journalDetails = {
+    'Journal_Updates': 'journal-updates.html',
     'Aditya_Raj': 'https://aditya24raj.github.io/journal/',
     'Ajit_N_Ogale': 'https://ajit1-mrk.github.io/Ajit_journal',
     'Anmol_Saxena': 'https://anmol-mrk.github.io/Journal.html',
@@ -51,7 +52,7 @@ function populateNavbar()
 {
     // get reference to navbar
     var myNavbar = document.getElementById("my-navbar");
-    var serialNum = 1;
+    var serialNum = 0;
     for (var person in journalDetails)
     {
         // add a button for each person
