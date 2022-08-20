@@ -276,7 +276,7 @@ my_journal.check()`);
             if (!selectYear || !selectMonth || !selectDate) {
                 // bad date entered, return
                 // show error message
-                document.getElementById("output-area").innerHTML = `<tr><td colspan='2' class="mx-auto text-center"><img src="we-dont-do-that-here-black-panther.gif" alt="Black Panther saying we don't do that here!"></td></tr>`
+                document.getElementById("output-area").innerHTML = `<tr><td colspan='2' class="table-danger"><b>Incomplete/Invalid Date Selected</b></br></td></tr>`
 
                 // enable the button
                 document.getElementById("my-button").disabled = false;
