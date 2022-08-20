@@ -24,7 +24,7 @@
 
         <div>
             <label for="selected-date" class="form-label">Please Pick a Date</label><br/>
-            <input style="width: 300px; display: inline" type="date" id="selected-date" class="form-control">
+            <input style="width: 300px; display: inline; margin-bottom: 5px" type="date" id="selected-date" class="form-control">
 
             <button id="my-button" style="width: 200px; margin-bottom: 5px" class="btn btn-primary form-control" type="button" onclick="checkJournals()">
                 <span id="my-button-spinner" class="spinner-border spinner-border-sm text-light visually-hidden" role="status"></span>
@@ -37,7 +37,7 @@
             <table class="table table-bordered border-dark table-responsive table-sm table-hover text-left">
                 <thead class="table-info">
                     <tr>
-                        <th>Name</th>
+                        <th style="min-width: 230px">Name</th>
                         <th>Coleman-Liau Index(&lt;5 means simple/very short sentences)</th>
                     </tr>
                 </thead>
