@@ -104,7 +104,7 @@ class Journal:
         
         required_date_element = soup.find(
             "td",
-            string = re.compile(f"^.*{check_for_date.day}.(.*{check_for_date.month}|.*{self.month_regex[check_for_date.month]})(.*{check_for_date.year})")
+            string = re.compile(f"^.*{check_for_date.day}.(.*{check_for_date.month}|.*{self.month_regex[check_for_date.month]}).(.*{check_for_date.year})")
         )
 
         if not required_date_element:
