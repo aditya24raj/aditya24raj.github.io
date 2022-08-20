@@ -21,13 +21,18 @@
     </header>
 
     <main class="mx-auto mt-3" style="text-align: left !important; max-width: 900px">
+
         <div>
-            <label for="selected-date">Check updates for </label>
-            <input style="margin-bottom: 10px" type="date" id="selected-date" onchange="checkJournals()">
-            <div id="spinner" class="spinner-border spinner-border-sm text-secondary visually-hidden" role="status" aria-hidden="true"></div>
+            <label for="selected-date" class="form-label">Please Pick a Date</label><br/>
+            <input style="width: 300px; display: inline" type="date" id="selected-date" class="form-control">
+
+            <button id="my-button" style="width: 200px; margin-bottom: 5px" class="btn btn-primary form-control" type="button" onclick="checkJournals()">
+                <span id="my-button-spinner" class="spinner-border spinner-border-sm text-light visually-hidden" role="status"></span>
+                <span id="my-button-text">Check Journals</span>
+            </button>
         </div>
         
-        <div class="table-responsive-sm">
+        <div class="table-responsive-sm mt-3">
             <!--class="table table-bordered border-dark table-responsive table-sm table-hover"-->
             <table class="table table-bordered border-dark table-responsive table-sm table-hover text-left">
                 <thead class="table-info">
@@ -41,7 +46,6 @@
                 </tbody>
             </table>
         </div>
-
     </main>
 
     <script type="text/javascript">      
@@ -248,9 +252,14 @@ my_journal.check()`);
         async function checkJournals() {
             // delete previous data
             document.getElementById("output-area").innerHTML = '';
-
+            
+            // disabled the button
+            document.getElementById("my-button").disabled = true;
             // show spinner
-            document.getElementById("spinner").classList.remove("visually-hidden");
+            document.getElementById("my-button-spinner").classList.remove("visually-hidden");
+            // change text of button
+            document.getElementById("my-button-text").innerText = "Checking...";
+
             // disabled date input
             document.getElementById("selected-date").disabled = true;
 
@@ -258,12 +267,23 @@ my_journal.check()`);
             //console.log(document.getElementById("selected-date").value);
 
             var selectDate = new Date(document.getElementById("selected-date").value)
-            if (!selectDate) {
-                // No date selected, return 
+            // selectDate.getFullYear(), selectDate.getMonth()+1, selectDate.getDate()
+
+            var selectYear = selectDate.getFullYear();
+            var selectMonth = selectDate.getMonth()+1;
+            var selectDate = selectDate.getDate();
+
+            if (!selectYear || !selectMonth || !selectDate) {
+                // bad date entered, return
+                // enable the button
+                document.getElementById("my-button").disabled = false;
                 // hide spinner
-                document.getElementById("spinner").classList.add("visually-hidden");
-                // enabled date input
-                document.getElementById("selected-date").disabled = false;
+                document.getElementById("my-button-spinner").classList.add("visually-hidden");
+                // change text of button
+                document.getElementById("my-button-text").innerText = "Check Journals";
+
+                // enable date input
+                document.getElementById("selected-date").disabled = false; 
                 
                 return;
             }
@@ -277,13 +297,18 @@ my_journal.check()`);
                               .then(y => {return y});
                 //console.log(response);
                 //let response = getHTML(journalDetails[person])
-                getStatus(person, journalDetails[person], response, selectDate.getFullYear(), selectDate.getMonth()+1, selectDate.getDate());
+                getStatus(person, journalDetails[person], response, selectYear, selectMonth, selectDate);
                 
             }
 
+            // enable the button
+            document.getElementById("my-button").disabled = false;
             // hide spinner
-            document.getElementById("spinner").classList.add("visually-hidden");
-            // enabled date input
+            document.getElementById("my-button-spinner").classList.add("visually-hidden");
+            // change text of button
+            document.getElementById("my-button-text").innerText = "Check Journals";
+
+            // enable date input
             document.getElementById("selected-date").disabled = false;
         }
 
@@ -296,7 +321,7 @@ my_journal.check()`);
             document.getElementById("selected-date").value = `${yearToday}-${monthToday}-${dayToday}`;
         }
 
-        setTodayDate();
+        setTodayDate();   
         checkJournals();
     </script>
 
