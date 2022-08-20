@@ -26,9 +26,8 @@
             <label for="selected-date" class="form-label">Please Pick a Date</label><br/>
             <input style="width: 300px; display: inline; margin-bottom: 5px" type="date" id="selected-date" class="form-control">
 
-            <button id="my-button" style="width: 200px; margin-bottom: 5px; margin-left: 5px" class="btn btn-primary form-control" type="button" onclick="checkJournals()">
-                <span id="my-button-spinner" class="spinner-border spinner-border-sm text-light visually-hidden" role="status"></span>
-                <span id="my-button-text">Check Journals</span>
+            <button id="my-button" style="width: 150px; margin-bottom: 5px; margin-left: 5px" class="btn btn-primary form-control" type="button" onclick="checkJournals()">
+                <span>Refresh</span>
             </button>
         </div>
         
@@ -255,11 +254,9 @@ my_journal.check()`);
             
             // disabled the button
             document.getElementById("my-button").disabled = true;
-            // show spinner
-            document.getElementById("my-button-spinner").classList.remove("visually-hidden");
-            // change text of button
-            document.getElementById("my-button-text").innerText = "Checking...";
-
+            // add spinner instead of text
+            document.getElementById("my-button").innerHTML = `<span>Refreshing...</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="my-button-spinner" class="spinner-border spinner-border-sm text-light" role="status"></span>`;
+            
             // disabled date input
             document.getElementById("selected-date").disabled = true;
 
@@ -278,16 +275,14 @@ my_journal.check()`);
                 // show error message
                 document.getElementById("output-area").innerHTML = `<tr><td colspan='2' class="table-danger"><b>Incomplete/Invalid Date Selected</b></br></td></tr>`
 
-                // enable the button
-                document.getElementById("my-button").disabled = false;
-                // hide spinner
-                document.getElementById("my-button-spinner").classList.add("visually-hidden");
-                // change text of button
-                document.getElementById("my-button-text").innerText = "Check Journals";
-
-                // enable date input
-                document.getElementById("selected-date").disabled = false; 
-                
+               // enable the button
+               document.getElementById("my-button").disabled = false;
+               // add text instead of spinner
+               document.getElementById("my-button").innerHTML = `<span>Refresh</span>`;
+            
+               // enable date input
+               document.getElementById("selected-date").disabled = false;
+            
                 return;
             }
 
@@ -306,11 +301,9 @@ my_journal.check()`);
 
             // enable the button
             document.getElementById("my-button").disabled = false;
-            // hide spinner
-            document.getElementById("my-button-spinner").classList.add("visually-hidden");
-            // change text of button
-            document.getElementById("my-button-text").innerText = "Check Journals";
-
+            // add text instead of spinner
+            document.getElementById("my-button").innerHTML = `<span>Refresh</span>`;
+            
             // enable date input
             document.getElementById("selected-date").disabled = false;
         }
