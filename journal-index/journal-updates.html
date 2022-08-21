@@ -37,7 +37,7 @@
                 <thead class="table-primary">
                     <tr>
                         <th style="min-width: 230px">Name</th>
-                        <th>Coleman-Liau Index(&lt;5 means simple/very short sentences)</th>
+                        <th>Coleman-Liau Index(&lt;5 may mean little content/short sentences)</th>
                     </tr>
                 </thead>
 
@@ -89,22 +89,17 @@ class Journal:
             12 : "[dD][eE][cC]"
         }
 
-    
-    def __download_HTML__(self, journal_URL):
-        return """${response}"""
-
     def __has_updated_for_date__(self, journal_URL, check_for_date):
-        journal_HTML = self.__download_HTML__(journal_URL)
+        journal_HTML = """${response}"""
         
         if not journal_HTML:
-            print("problem loading this page- ", journal_URL)
-            return
+            return "problem loading this page"
 
         soup = BeautifulSoup(journal_HTML, 'html.parser')
         
         required_date_element = soup.find(
             "td",
-            string = re.compile(f"^.*{check_for_date.day}.(.*{check_for_date.month}|.*{self.month_regex[check_for_date.month]}).(.*{check_for_date.year})")
+            string = re.compile(f"^[^0-9A-Za-z]*({check_for_date.day}[A-Za-z]*|0{check_for_date.day}[A-Za-z]*)[^0-9A-Za-z]+({check_for_date.month}|0{check_for_date.month}|{self.month_regex[check_for_date.month]}[A-Za-z]*)[^0-9A-Za-z]+({check_for_date.year}|{str(check_for_date.year)[-2:]})")
         )
 
         if not required_date_element:
@@ -130,6 +125,10 @@ class Journal:
 
                 sentence_found = False
                 for my_index, my_letter in enumerate(i_sentence):
+                    if my_letter == ' ' and i_sentence[my_index-1] == ' ':
+                        continue
+
+                    #print(repr(my_letter))
                     if my_index == 0 or my_index == i_sentence_len:
                         words += 1
 
@@ -141,6 +140,7 @@ class Journal:
                         words += 1
                     
                     else:
+                        #print('letter found')
                         letters += 1
                     
                 
@@ -148,7 +148,10 @@ class Journal:
                     # no sentence terminator was found, treat whole <li> as one sentence
                     sentences += 1
             
-            #print(letters, words, sentences)
+            if words == 0:
+                return "Empty Journal"
+            
+            print(letters, words, sentences)
             L = letters / words * 100
             S = sentences / words * 100
 
@@ -156,37 +159,13 @@ class Journal:
             #return len(required_date_element) > 0
             
         except Exception as e:
-            print(e)
-            exit()
-
-    def __get_check_for_date__(self):
-        return date.today()
-        #return date(2022, 8, 18)
-        choice = input(f"Check Journal for today's({date.today()}) entry [Y/n]: ")
-        
-        if choice.strip().lower() in ['y', 'yes', '']:
-            return date.today();
-        
-        else:
-            try:
-                print("Enter date-")
-                return date(
-                    int(input("Year: ")),
-                    int(input("Month: ").lstrip('0')),
-                    int(input("Day: ").lstrip('0'))
-                )
-
-            except ValueError as e:
-                print("Error:", e)
-                print("dev is lazy, didn't implement loop till valid input!")
-                exit()
+            return e
 
     def check(self):
-        check_for_date = date(${selectYear}, ${selectMonth}, ${selectDay})
-        score = self.__has_updated_for_date__("${journalURL}", check_for_date)
+        score = self.__has_updated_for_date__("${journalURL}", date(${selectYear}, ${selectMonth}, ${selectDay}))
         
         css_class=""
-        if score == "Not Updated":
+        if score in ["Not Updated", "Not Updated", "problem loading this page", "Empty Journal"]:
             css_class="table-danger"
         elif score < 5:
             css_class="table-warning"
@@ -315,6 +294,7 @@ my_journal.check()`);
             var yearToday = String(dateToday.getFullYear());
             
             document.getElementById("selected-date").value = `${yearToday}-${monthToday}-${dayToday}`;
+            //document.getElementById("selected-date").value = `2022-08-12`;
         }
 
         setTodayDate();   
