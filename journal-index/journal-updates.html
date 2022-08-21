@@ -37,7 +37,8 @@
                 <thead class="table-primary">
                     <tr>
                         <th style="min-width: 230px">Name</th>
-                        <th>Coleman-Liau Index(&lt;5 may mean little content/short sentences)</th>
+                        <th>Coleman-Liau Index(<span style="font-weight:lighter">&lt;5 for <strong>very</strong> short sentences</span>)</th>
+
                     </tr>
                 </thead>
 
@@ -103,7 +104,7 @@ class Journal:
         )
 
         if not required_date_element:
-            return "Not Updated"
+            return "Journal Not Updated"
 
         # determine readability of text using Coleman–Liau index
         # CLI = 0.0588L - 0.296S - 15.8
@@ -150,8 +151,8 @@ class Journal:
             
             if words == 0:
                 return "Empty Journal"
-            
-            print(letters, words, sentences)
+
+            #print(letters, words, sentences)
             L = letters / words * 100
             S = sentences / words * 100
 
@@ -159,20 +160,24 @@ class Journal:
             #return len(required_date_element) > 0
             
         except Exception as e:
-            return e
+            print(e)
 
     def check(self):
         score = self.__has_updated_for_date__("${journalURL}", date(${selectYear}, ${selectMonth}, ${selectDay}))
         
         css_class=""
-        if score in ["Not Updated", "Not Updated", "problem loading this page", "Empty Journal"]:
+        if score in ["Journal Not Updated", "problem loading this page", "Empty Journal"]:
             css_class="table-danger"
         elif score < 5:
             css_class="table-warning"
         else:
             css_class="table-success"
+        
+        
+        return f"<tr class={css_class}><td><a href='${journalURL}' target='_blank'>${personName}</a><td>{score}</td></tr>"
+            
+     
 
-        return f"<tr class={css_class}><td><a href='${journalURL}' target='_blank'>${personName}</a></td><td>{score}</td></tr>"
 
 
 my_journal = Journal()
