@@ -274,7 +274,7 @@ my_journal.check()`);
 
             for (var person in journalDetails)
             {
-                var response = await fetch(journalDetails[person])
+                var response = await fetch(journalDetails[person], {cache: "no-store"})
                               .then(x => x.text())
                               .then(y => {return y});
                 //console.log(response);
