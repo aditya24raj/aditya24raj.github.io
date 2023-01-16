@@ -14,7 +14,6 @@
 
 	<body class="bg-dark text-light mx-2 text-left">
 		<header>
-			<!--breadcrumb to home-->
 			<p class="display-3">Elixir CheatSheet</p>
 			<!--hint about what this page does-->
 			<p class="text-muted mt-n1">//Programming Guidelines for Elixir</p>
@@ -35,9 +34,28 @@
 			
 					<tbody>
 						<tr>
-							<td>0</td>
-							<td>Sample Title</td>
-                            <td>Sample Description</td>
+							<td>1</td>
+							<td>Dev console does not open properly - delete the workspace, it might have been corrupted
+							</td>
+                            <td>
+							Login to Workbench and go to REST Explorer<br>
+							Use the following query in Workbench to get the IDEWorkspace
+							/services/data/v31.0/tooling/query/?q=SELECT id, name from IDEWorkspace
+							e.g. ID of IDEWorkspace is "1dexxxxxxxxxxxxxx".<br>
+							Do GET operation for the found id with following query "/services/data/v29.0/tooling/sobjects/IDEWorkspace/1de1a0000014sEWAAY"
+							You will see the content of IDEWorkspace<br>
+							Do DELETE operation on found record.<br>
+							Re-open Developer Console.
+							Developer Console will work fine. As we created a new workspace and the old workspace has been deleted.And the slowness will also be removed.<br>
+							</td>
+						</tr>
+
+						<tr>
+							<td>2</td>
+							<td>Call generic lookup component in Elixir with this code <br /> <I>Send objectName and filter criteria</td>
+                            <td>
+								&lt;c:lookupComponent  objectName="Account" fieldName="Name" value = "{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}" filterClause = "Name = 'Coke' "/&gt;
+							</td>
 						</tr>
 					</tbody>
 				</table>
