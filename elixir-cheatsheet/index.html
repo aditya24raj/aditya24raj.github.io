@@ -1,66 +1,73 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>Elixir CheatSheet</title>
-		
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-		<link rel="stylesheet" href="../styles/styles.css">
-		<link rel="stylesheet" href="local-styles.css"
 
-		<link rel="icon" type="image/png" href="../favicon.png">
-	</head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<body class="bg-dark text-light mx-2 text-left">
-		<header>
-			<p class="display-3">Elixir CheatSheet</p>
-			<!--hint about what this page does-->
-			<p class="text-muted mt-n1">//Programming Guidelines for Elixir</p>
-		</header>
+	<title>Elixir CheatSheet</title>
 
-		<main id="main-content">
-			<!--making our tables horizontally scrollable on small devices-->
-			<div class="table-responsive-sm">
-				<!--table containing date, project name and project website-->
-				<table class="table table-borderless text-light">
-					<thead>
-						<tr>
-							<th>S. No.</th>
-						    <th>Topic</th>
-                            <th>Description</th>
-						</tr>
-					</thead>
-			
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Dev console does not open properly - delete the workspace, it might have been corrupted
-							</td>
-                            <td>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="local-styles.css">
+	<link rel="icon" type="image/png" href="../favicon.png">
+</head>
+
+<body class="bg-dark text-light mx-2 text-left">
+	<header>
+		<p class="display-3">Elixir CheatSheet</p>
+		<!--hint about what this page does-->
+		<p class="text-muted mt-n1">//Programming Guidelines for Elixir</p>
+	</header>
+
+	<main id="main-content">
+		<!--making our tables horizontally scrollable on small devices-->
+		<div class="table-responsive-sm">
+			<!--table containing date, project name and project website-->
+			<table class="table table-borderless text-light">
+				<thead>
+					<tr>
+						<th>S. No.</th>
+						<th>Topic</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Dev console does not open properly - delete the workspace, it might have been corrupted
+						</td>
+						<td>
 							Login to Workbench and go to REST Explorer<br>
 							Use the following query in Workbench to get the IDEWorkspace
 							/services/data/v31.0/tooling/query/?q=SELECT id, name from IDEWorkspace
 							e.g. ID of IDEWorkspace is "1dexxxxxxxxxxxxxx".<br>
-							Do GET operation for the found id with following query "/services/data/v29.0/tooling/sobjects/IDEWorkspace/1de1a0000014sEWAAY"
+							Do GET operation for the found id with following query
+							"/services/data/v29.0/tooling/sobjects/IDEWorkspace/1de1a0000014sEWAAY"
 							You will see the content of IDEWorkspace<br>
 							Do DELETE operation on found record.<br>
 							Re-open Developer Console.
-							Developer Console will work fine. As we created a new workspace and the old workspace has been deleted.And the slowness will also be removed.<br>
-							</td>
-						</tr>
+							Developer Console will work fine. As we created a new workspace and the old workspace has
+							been deleted.And the slowness will also be removed.<br>
+						</td>
+					</tr>
 
-						<tr>
-							<td>2</td>
-							<td>Call generic lookup component in Elixir with this code <br /> <I>Send objectName and filter criteria</td>
-                            <td>
-								&lt;c:lookupComponent  objectName="Account" fieldName="Name" value = "{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}" filterClause = "Name = 'Coke' "/&gt;
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</main>
-	</body>
+					<tr>
+						<td>2</td>
+						<td>Call generic lookup component in Elixir with this code <br /> <I>Send objectName and filter
+								criteria</td>
+						<td>
+							&lt;c:lookupComponent objectName="Account" fieldName="Name" value =
+							"{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}" filterClause = "Name =
+							'Coke' "/&gt;
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+</body>
+
 </html>
