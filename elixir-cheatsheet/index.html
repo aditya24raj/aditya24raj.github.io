@@ -9,12 +9,14 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 	<link rel="stylesheet" href="../styles/styles.css">
 	<link rel="stylesheet" href="local-styles.css">
 	<link rel="icon" type="image/png" href="../favicon.png">
 </head>
 
-<body class="bg-dark text-light mx-2 text-left">
+<body class="bg-dark text-light text-left">
 	<header>
 		<p class="display-3">Elixir CheatSheet</p>
 		<!--hint about what this page does-->
@@ -59,11 +61,12 @@
 						<td>Call generic lookup component in Elixir with this code <br /> <I>Send objectName and filter
 								criteria</td>
 						<td>
-							<kbd>
-								&lt;c:lookupComponent objectName="Account" fieldName="Name" value =
-								"{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}" filterClause = "Name =
-								'Coke' "/&gt;
-							</kbd>
+							<pre><code class="language-xml">&lt;c:lookupComponent
+	objectName="Account"
+	fieldName="Name"
+	value = "{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}"
+	filterClause = "Name='Coke'"/&gt;
+</code></pre>
 						</td>
 					</tr>
 
@@ -73,15 +76,15 @@
 							Call generic Multi select lookup component in Elixir with this code
 						</td>
 						<td>
-							<kbd>
-								&lt;aura:attribute name="selectedRecords" type="List" /&gt;<br>
-								&lt;c:MultiSelectLookup objectName="Account" fieldName="Name" label="Account Name"
-							<kbd>
-								&lt;aura:attribute name="selectedRecords" type="List" /&gt;<br>
-								&lt;c:MultiSelectLookup objectName="Account" fieldName="Name" label="Account Name"
-								whereClause="" selectedRecords="{!v.selectedRecords}" iconName="standard:account"
-								placeholder="Enter Value" /&gt;
-							</kbd>
+							<pre><code>&lt;aura:attribute name="selectedRecords" type="List"/&gt;
+&lt;c:MultiSelectLookup 
+	objectName="Account"
+	fieldName="Name"
+	label="Account Name"
+	whereClause=""
+	selectedRecords="{!v.selectedRecords}"
+	iconName="standard:account"
+	placeholder="Enter Value"/&gt;</code></pre>
 						</td>
 					</tr>
 
@@ -92,19 +95,19 @@
 						</td>
 						<td>
 							LWC JS:<br>
-							<kbd>
-								&emsp;columns = [<br>
-								&emsp; &emsp; { label: 'Test Id', fieldName: 'ElixirSuite__Test_Id__c' },<br>
-								&emsp; &emsp; { label: 'Test Name', fieldName: 'ElixirSuite__Test_Name__c' }<br>
-								&emsp; ];<br>
-								&emsp; columnsInClause = ['Name','ElixirSuite__Test_Name__c'];<br>
-								&emsp; labId = '2701389';<br>
-								&emsp; filterClause = '(ElixirSuite__Lab_Id__c=' + '\'' + this.labId + '\'' + ')';<br>
-								&emsp; evtName;<br>
-								&emsp; handleUpload(event){<br>
-								&emsp; &emsp; this.evtName = event.detail;<br>
-								&emsp; &emsp; console.log(' Rows '+JSON.stringify(this.evtName));<br>
-								&emsp; }</kbd><br>
+							<pre><code>columns = [
+	{ label: 'Test Id', fieldName: 'ElixirSuite__Test_Id__c' },
+	{ label: 'Test Name', fieldName: 'ElixirSuite__Test_Name__c' }
+];
+columnsInClause = ['Name','ElixirSuite__Test_Name__c'];
+labId = '2701389';
+filterClause = '(ElixirSuite__Lab_Id__c=' + '\'' + this.labId + '\'' + ')';
+
+evtName;
+handleUpload(event){
+	this.evtName = event.detail;
+	console.log(' Rows '+JSON.stringify(this.evtName));
+}</pre></code>
 
 							where<br>
 							columns is used to shows number of columns on Data table,<br>
@@ -112,18 +115,17 @@
 							keyword<br>
 							filterClause is the must have condition<br>
 							handleUpload is the handler of Custom event that Dialog box will initiate<br>
-							LWC html:<br>
-							<kbd>
-								&lt;c-generic-dialog-box columns={columns} columns-in-clause={columnsInClause}<br>
-									&emsp; object-api-name="Test__c" filter-clause={filterClause}<br>
-									&emsp; onselectedrecords={handleUpload}&gt;&lt;/c-generic-dialog-box&gt;
-							</kbd><br>
+							LWC html:
+							<pre><code>&lt;c-generic-dialog-box columns={columns} columns-in-clause={columnsInClause}
+	object-api-name="Test__c" filter-clause={filterClause}
+	onselectedrecords={handleUpload}&gt;&lt;/c-generic-dialog-box&gt;<pre></code>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</main>
+	<script>hljs.highlightAll();</script>
 </body>
 
 </html>
