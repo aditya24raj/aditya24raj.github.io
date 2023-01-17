@@ -59,9 +59,11 @@
 						<td>Call generic lookup component in Elixir with this code <br /> <I>Send objectName and filter
 								criteria</td>
 						<td>
-							&lt;c:lookupComponent objectName="Account" fieldName="Name" value =
-							"{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}" filterClause = "Name =
-							'Coke' "/&gt;
+							<kbd>
+								&lt;c:lookupComponent objectName="Account" fieldName="Name" value =
+								"{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}" filterClause = "Name =
+								'Coke' "/&gt;
+							</kbd>
 						</td>
 					</tr>
 
@@ -71,10 +73,48 @@
 							Call generic Multi select lookup component in Elixir with this code
 						</td>
 						<td>
-							&lt;aura:attribute name="selectedRecords" type="List" /&gt;<br>
-							&lt;c:MultiSelectLookup objectName="Account" fieldName="Name" label="Account Name"
+							<kbd>
+								&lt;aura:attribute name="selectedRecords" type="List" /&gt;<br>
+								&lt;c:MultiSelectLookup objectName="Account" fieldName="Name" label="Account Name"
 								whereClause="" selectedRecords="{!v.selectedRecords}" iconName="standard:account"
 								placeholder="Enter Value" /&gt;
+							</kbd>
+						</td>
+					</tr>
+
+					<tr>
+						<td>4</td>
+						<td>
+							Multi Select dialog box
+						</td>
+						<td>
+							LWC JS:<br>
+							<kbd>
+								&emsp;columns = [<br>
+								&emsp; &emsp; { label: 'Test Id', fieldName: 'ElixirSuite__Test_Id__c' },<br>
+								&emsp; &emsp; { label: 'Test Name', fieldName: 'ElixirSuite__Test_Name__c' }<br>
+								&emsp; ];<br>
+								&emsp; columnsInClause = ['Name','ElixirSuite__Test_Name__c'];<br>
+								&emsp; labId = '2701389';<br>
+								&emsp; filterClause = '(ElixirSuite__Lab_Id__c=' + '\'' + this.labId + '\'' + ')';<br>
+								&emsp; evtName;<br>
+								&emsp; handleUpload(event){<br>
+								&emsp; &emsp; this.evtName = event.detail;<br>
+								&emsp; &emsp; console.log(' Rows '+JSON.stringify(this.evtName));<br>
+								&emsp; }</kbd><br>
+
+							where<br>
+							columns is used to shows number of columns on Data table,<br>
+							columnsInClause is the list of fields that you want to compare against your search
+							keyword<br>
+							filterClause is the must have condition<br>
+							handleUpload is the handler of Custom event that Dialog box will initiate<br>
+							LWC html:<br>
+							<kbd>
+								<c-generic-dialog-box columns={columns} columns-in-clause={columnsInClause}<br>
+									&emsp; object-api-name="Test__c" filter-clause={filterClause}<br>
+									&emsp; onselectedrecords={handleUpload}></c-generic-dialog-box>
+							</kbd><br>
 						</td>
 					</tr>
 				</tbody>
