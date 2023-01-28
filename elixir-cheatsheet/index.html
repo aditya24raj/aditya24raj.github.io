@@ -61,7 +61,7 @@
 						<td>Call generic lookup component in Elixir with this code <br /> <I>Send objectName and filter
 								criteria</td>
 						<td>
-							<pre><code class="language-xml">&lt;c:lookupComponent
+<pre><code class="language-xml">&lt;c:lookupComponent
 	objectName="Account"
 	fieldName="Name"
 	value = "{!v.referralRecord.ElixirSuite__Referred_Out_Organization__c}"
@@ -76,7 +76,7 @@
 							Call generic Multi select lookup component in Elixir with this code
 						</td>
 						<td>
-							<pre><code>&lt;aura:attribute name="selectedRecords" type="List"/&gt;
+<pre><code>&lt;aura:attribute name="selectedRecords" type="List"/&gt;
 &lt;c:MultiSelectLookup 
 	objectName="Account"
 	fieldName="Name"
@@ -84,7 +84,8 @@
 	whereClause=""
 	selectedRecords="{!v.selectedRecords}"
 	iconName="standard:account"
-	placeholder="Enter Value"/&gt;</code></pre>
+	placeholder="Enter Value"/&gt;
+</code></pre>
 						</td>
 					</tr>
 
@@ -95,7 +96,7 @@
 						</td>
 						<td>
 							LWC JS:<br>
-							<pre><code>columns = [
+<pre><code>columns = [
 	{ label: 'Test Id', fieldName: 'ElixirSuite__Test_Id__c' },
 	{ label: 'Test Name', fieldName: 'ElixirSuite__Test_Name__c' }
 ];
@@ -107,7 +108,8 @@ evtName;
 handleUpload(event){
 	this.evtName = event.detail;
 	console.log(' Rows '+JSON.stringify(this.evtName));
-}</pre></code>
+}
+</pre></code>
 
 							where<br>
 							columns is used to shows number of columns on Data table,<br>
@@ -116,9 +118,10 @@ handleUpload(event){
 							filterClause is the must have condition<br>
 							handleUpload is the handler of Custom event that Dialog box will initiate<br>
 							LWC html:
-							<pre><code>&lt;c-generic-dialog-box columns={columns} columns-in-clause={columnsInClause}
+<pre><code>&lt;c-generic-dialog-box columns={columns} columns-in-clause={columnsInClause}
 	object-api-name="Test__c" filter-clause={filterClause}
-	onselectedrecords={handleUpload}&gt;&lt;/c-generic-dialog-box&gt;<pre></code>
+	onselectedrecords={handleUpload}&gt;&lt;/c-generic-dialog-box&gt;
+<pre></code>
 						</td>
 					</tr>
 
@@ -150,16 +153,18 @@ handleUpload(event){
 	backgroundColor: 'black',
 	url: '/lightning/r/Event/00UN000000BqkXUMAZ/view'
 	}
-]</code></pre>
+]
+</code></pre>
 
-							<pre><code class="nohighlight">Attribute description:
+<pre><code class="nohighlight">Attribute description:
 	id - Record Id
 	start - Start datetime of event
 	end - End datetime of event
 	title - String that appears on calendar column
 	textColor - optional
 	backgroundColor - optional
-	url - optional</code></pre>
+	url - optional
+</code></pre>
 
 							<div class="c-img">
 								<img src="images/guidline-5/1.png">
@@ -168,6 +173,34 @@ handleUpload(event){
 							<div class="c-img">
 								<img src="images/guidline-5/2.png">
 							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>6</td>
+						<td>Timezone conversion</td>
+						<td>
+You assume the date time given is in the selected time zone (not GMT) and neutralize it to GMT and do all the conversions if you leave
+
+Code:
+This example assumes you have given time in Asia/Kolkata and converts to GMT (you can save this) – from here you can convert to any other time zone.
+For conversion you can either use conventions like (a) Asia/Kolkata (or) (b) GMT+05:30 – you can opt to display this in picklist.
+<pre><code class="language-java">Date targetDate = Date.newInstance(2023, 1, 18);
+Time targetTime = Time.newInstance(12, 35, 0, 0);
+TimeZone targetTimezone = TimeZone.getTimeZone('Asia/Kolkata');
+
+system.debug(dt.format('yyyy-MM-dd h:mm:ss a', 'GMT+05:30'));
+
+Integer offsetSeconds = targetTimezone.getOffset(targetDate) / 1000;
+system.debug(offsetSeconds);
+
+Datetime dtGMTTime = Datetime.newInstance(targetDate, targetTime).addSeconds(-offsetSeconds);
+system.debug('in GMT=> ' + dtGMTTime);
+
+System.debug('in India==> ' + dtGMTTime.format('MM/dd/yyyy HH:mm:ss', 'Asia/Kolkata'));
+System.debug('in Au==> ' + dtGMTTime.format('MM/dd/yyyy HH:mm:ss', 'Australia/Brisbane'));
+System.debug('in SL==> ' + dtGMTTime.format('MM/dd/yyyy HH:mm:ss', 'Australia/Brisbane'));
+</code></pre>
 						</td>
 					</tr>
 				</tbody>
