@@ -203,6 +203,70 @@ System.debug('in SL==> ' + dtGMTTime.format('MM/dd/yyyy HH:mm:ss', 'Australia/Br
 </code></pre>
 						</td>
 					</tr>
+
+					<tr>
+						<td>7</td>
+						<td>CheatSheet for DMLManager</td>
+						<td>
+Insert:
+<pre><code class="language-java">Account accRec = new Account();
+accRec.Name = 'New Account';
+
+//Instead of calling "insert accRec", use:
+DMLManager.insertAsUser(accRec);
+</code></pre>
+
+<pre><code class="language-java">List&lt;Account&gt; accList = new List&lt;Account&gt;(); 
+Account accRec = new Account();
+accRec.Name = 'New Account';
+accList.add(accRec);
+
+//Instead of calling "insert accList", use:
+DMLManager.insertAsUser(accList);
+</code></pre>
+
+Update:
+<pre><code class="language-java">Contact contactRec = [SELECT Id, FirstName, LastName FROM Contact where id=:cid];
+
+//Manipulate the contactRec
+
+//Instead of calling "update contactRec", use:
+DMLManager.updateAsUser(contactRec);
+</code></pre>
+
+<pre><code class="language-java">List&lt;Contact&gt; contactList = [SELECT Id, FirstName, LastName FROM Contact];
+
+//Manipulate the contactList
+	
+//Instead of calling "update contactList", use:
+DMLManager.updateAsUser(contactList);
+</code></pre>
+
+Delete:
+<pre><code class="language-java">Contact contactRec = [SELECT Id, FirstName, LastName FROM Contact where id=:cid];
+
+//Instead of calling "delete contactRec", use:
+DMLManager.deleteAsUser(contactRec);
+</code></pre>
+
+<pre><code class="language-java">List&lt;Contact&gt; contactList = [SELECT Id, FirstName, LastName FROM Contact];
+//Instead of calling "delete contactList", use:
+DMLManager.deleteAsUser(contactList);
+</code></pre>
+
+Upsert:
+<pre><code class="language-java">Account[] acctsList = [SELECT Id, Name, BillingCity FROM Account WHERE id = :accId];
+
+//Manipulate the acctsList
+
+Account newAcct = new Account(Name = 'Acme', BillingCity = 'San Francisco');
+acctsList.add(newAcct);
+
+//Instead of calling "upsert acctsList", use:
+DMLManager.upsertAsUser(acctsList);
+</code></pre>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
