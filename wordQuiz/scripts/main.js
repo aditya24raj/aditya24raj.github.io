@@ -267,7 +267,7 @@ class User extends Player {
 }
 
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/scripts/sw.js");
+    navigator.serviceWorker.register("/wordQuiz/scripts/sw.js");
 }
 
 const gameDictionary = new Dictionary();
