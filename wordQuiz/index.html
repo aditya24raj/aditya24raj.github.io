@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Quiz</title>
+    <link rel="manifest" href="wq.webmanifest" />
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
+
+    <style>
+        .scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+    
+        .scrollbar::-webkit-scrollbar-track {
+            border-radius: 100vh;
+        }
+    
+        .scrollbar::-webkit-scrollbar-thumb {
+            border-radius: 100vh;
+            background-color: rgb(38 38 38);
+        }
+    </style>
+
+</head>
+
+<body class="bg-neutral-900 text-[#C4C7C5]">
+    <div class="pt-4 px-4 md:px-8 xl:px-96 h-screen font-mono">
+        <div>
+            <div class="mb-7" id="word-quiz"><b>Word Quiz</b></div>
+
+            <div class="">
+                <div>Bot [<span id="bot-score">0</span>] [<span id="bot-respond-with-letter"
+                        class="capitalize">-</span>]: <span class="px-1 capitalize" id="bot-response">-</span></div>
+                <div>You [<span id="user-score">0</span>] [<span id="user-respond-with-letter"
+                        class="capitalize">-</span>]: <input class="px-1 capitalize  bg-neutral-800" id="user-response"
+                        autocomplete="off" value="" /></div>
+            </div>
+
+        </div>
+
+        <div id="message-board" style="color: red; overflow-wrap: break-word; min-height: 60px; padding-top:20px;">
+            <!-- <pre><code style="color:darkgray">How to play?
+    You [0] [R]: <input class="px-1 capitalize border" autocomplete="off" value="" disabled/>
+        |   |       |
+        |   |      Enter your word here 
+        |   |
+        |  Your word should start with this letter
+        |   
+        Your current score
+
+    </code></pre> -->
+        </div>
+
+        <div style="color:darkgray">
+            <hr style="border-color:darkgrey" />
+            <span><b>Game Log</b></span>
+
+            <div id="game-log" style="max-height: 400px; height: 400px; overflow-y:auto" class="scrollbar">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <div style="background-color: black; color:white; min-height: 300px; margin-top: 30px">
+        <pre><code>
+     Word Quiz_
+
+    <div style="font-family:monospace; font-size:14px">
+    # ABOUT
+      To put it simply, it is 'Antakshari(अंताक्षरी)' but with words. It is a common childern game played in schools.
+      See Antakshar on WikiPedia
+      
+    # PARENTAL ADVISORY
+      Game uses wordlists to respond. wordlists contain most of the common words, including explicit ones.
+
+    # ATTRIBUTIONS
+      word list created  by: Google
+      word list modified by: Aditya Raj, aditya2400raj@gmail.com
+      
+      This work, "words_list", is a derivative of-
+      "http://storage.googleapis.com/books/ngrams/books/datasetsv2.html"
+      (American English, 1-grams),by google,
+      used under Creative Commons Attribution 3.0 Unported License- "https://creativecommons.org/licenses/by/3.0/".</div>
+        </code></pre>
+    </div> -->
+
+</body>
+
+</html>
