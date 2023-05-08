@@ -1,5 +1,5 @@
 // Files to cache
-const cacheName = 'wq-v2';
+const cacheName = 'wq-v1';
 const contentToCache = [
   '/wordQuiz/index.html',
   '/wordQuiz/scripts/main.js',
