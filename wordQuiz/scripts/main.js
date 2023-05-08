@@ -10,7 +10,7 @@ class Dictionary {
                 .then((result) => {
                     // Do things with result
                     this.lexis[letter] = {};
-                    this.lexis[letter].unusedWords = result.split("\r\n");
+                    this.lexis[letter].unusedWords = result.split("\n");
                     this.lexis[letter].usedWords = [];
                     resolve();
                 });
