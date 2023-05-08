@@ -1,7 +1,7 @@
 {
     "name": "Word Quiz",
     "short_name": "WQ",
-    "description": "Progressive Web App that lists games submitted to the A-Frame category in the js13kGames 2017 competition.",
+    "description": "Antarakshri with words",
     "icons": [
       {
         "src": "word_quiz_logo.png",
@@ -11,7 +11,7 @@
     ],
     "start_url": "index.html",
     "display": "fullscreen",
-    "theme_color": "#B12A34",
-    "background_color": "#B12A34"
+    "theme_color": "#171717",
+    "background_color": "#171717"
   }
   
