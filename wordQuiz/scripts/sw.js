@@ -1,34 +1,9 @@
 // Files to cache
 const cacheName = 'wq-v1';
 const contentToCache = [
+  '/wordQuiz/lexis/lexis',
   '/wordQuiz/index.html',
-  '/wordQuiz/scripts/main.js',
-  '/wordQuiz/lexis/a',
-  '/wordQuiz/lexis/b',
-  '/wordQuiz/lexis/c',
-  '/wordQuiz/lexis/d',
-  '/wordQuiz/lexis/e',
-  '/wordQuiz/lexis/f',
-  '/wordQuiz/lexis/g',
-  '/wordQuiz/lexis/h',
-  '/wordQuiz/lexis/i',
-  '/wordQuiz/lexis/j',
-  '/wordQuiz/lexis/k',
-  '/wordQuiz/lexis/l',
-  '/wordQuiz/lexis/m',
-  '/wordQuiz/lexis/n',
-  '/wordQuiz/lexis/o',
-  '/wordQuiz/lexis/p',
-  '/wordQuiz/lexis/q',
-  '/wordQuiz/lexis/r',
-  '/wordQuiz/lexis/s',
-  '/wordQuiz/lexis/t',
-  '/wordQuiz/lexis/u',
-  '/wordQuiz/lexis/v',
-  '/wordQuiz/lexis/w',
-  '/wordQuiz/lexis/x',
-  '/wordQuiz/lexis/y',
-  '/wordQuiz/lexis/z'];
+  '/wordQuiz/scripts/main.js'];
 
 // Installing Service Worker
 self.addEventListener('install', (e) => {
