@@ -1,7 +1,7 @@
 // Files to cache
 const cacheName = 'wq-v1';
 const contentToCache = [
-  '/wordQuiz/lexis/lexis',
+  '/wordQuiz/lexis/lexis.json',
   '/wordQuiz/index.html',
   '/wordQuiz/scripts/main.js'];
 

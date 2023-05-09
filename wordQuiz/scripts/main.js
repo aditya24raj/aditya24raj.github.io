@@ -3,7 +3,7 @@ class Dictionary {
 
     buildLexisWhole() {
         return new Promise((resolve, reject) => {
-            fetch(`lexis/lexis`)
+            fetch(`lexis/lexis.json`)
                 .then((response) => {
                     return response.text();
                 })
