@@ -1,6 +1,20 @@
 class Dictionary {
     lexis = {};
 
+    buildLexisWhole() {
+        return new Promise((resolve, reject) => {
+            fetch(`lexis/lexis`)
+                .then((response) => {
+                    return response.text();
+                })
+                .then((result) => {
+                    // Do things with result
+                    this.lexis = JSON.parse(result);
+                    resolve();
+                });
+        });
+    }
+
     buildLexis(letter) {
         return new Promise((resolve, reject) => {
             fetch(`lexis/${letter}`)
@@ -271,8 +285,11 @@ if ("serviceWorker" in navigator) {
 }
 
 const gameDictionary = new Dictionary();
+gameDictionary.buildLexisWhole()
+    .then(() => {
+        const bot = new Bot(gameDictionary);
+        const user = new User(gameDictionary);
 
-const bot = new Bot(gameDictionary);
-const user = new User(gameDictionary);
+        bot.respond('a');
+    });
 
-bot.respond('a');
