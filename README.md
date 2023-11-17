@@ -3,4 +3,4 @@
 
 These are just static websites built using HTML, CSS, Javascript and Bootstrap.
 
-visit https://aditya24raj.github.io to access the projects.
+Visit https://aditya24raj.github.io to access the projects
