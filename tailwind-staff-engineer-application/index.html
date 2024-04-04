@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Raj, Staff Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-neutral-800 text-white m-10 max-w-2xl">
+    <header>
+        <div>
+            <div class="text-blue-500 font-mono font-bold text-lg">whoami</div>
+            <div class="mt-2 border-solid border-l-4 border-blue-500 pl-3">
+                <div class="font-bold">Aditya Raj</div>
+                <div class="font-ligh text-sm">Developer, India UTC+5:30</div>
+                <ul class="mt-2 font-extralight text-sm">
+                    <li class="inline-block mr-2"><a class="no-underline hover:underline"
+                            href="https://github.com/aditya24raj/" target="_blank">GitHub</a></li>
+                    <li class="inline-block mr-2"><a class="no-underline hover:underline"
+                            href="https://www.linkedin.com/in/aditya24raj/" target="_blank">LinkedIn</a></li>
+                    <li class="inline-block"><a class="no-underline hover:underline"
+                            href="mailto:aditya2400raj@gmail.com" target="_blank">mailto:aditya2400raj@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- timezone difference -->
+        <div class="mt-8">
+            <div>
+                <div class="font-mono underline decoration-wavy decoration-red-500">FATAL: Expected UTC-5 to UTC+1, But
+                    found UTC+5:30!</div>
+                <div class="mt-3 border-solid border-l-4 border-blue-500 pl-3">
+                    <ol>
+                        <li class="list-inside mb-3">
+                            # For the mandatory 4 hours overlap, i will be available-
+                            <ul class="list-disc list-inside pl-10 font-mono">
+                                <li>in your time, from 08:00 AM to 12:00 AM</li>
+                                <li>which becomes,from 05:30 PM to 09:30 PM in my time</li>
+                            </ul>
+                        </li>
+
+                        <li class=" list-inside mb-3">
+                            # From time to time, for the full overlap, i can be available-
+                            <ul class="list-disc list-inside pl-10 font-mono">
+                                <li>in your time, from 08:00 AM to 05:00 PM</li>
+                                <li>which becomes,from 05:30 PM to 01:00 AM in my time</li>
+                            </ul>
+                        </li>
+
+                        <li class="list-inside mb-3">
+                            # Overall the time difference is not a problem.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- what are you excited about -->
+        <div class="mt-12">
+            <div>
+                <p class="font-bold text-lg text-blue-500">What you&apos;re excited about,</p>
+                <p class="text-neutral-500">and the work you&apos;d be most looking forward to in this role</p>
+            </div>
+            <div class="mt-3 border-solid border-l-4 border-blue-500 pl-3">
+                <p>I'm excited to work on solutions which will make dev/user experience pleasant.</p>
+                <p>It is the kind of work i enjoy the most. And this role will provide such opportunity in plenty.</p>
+                <div class="mt-3">
+                    <p>While all the upcoming project look really exiting, if i have to pick i will go with-</p>
+                    <ul class="list-disc list-inside pl-10">
+                        <li class="mb-3">
+                            Create a JavaScript library for running Tailwind CSS v4.0 in the browser
+                            <div class="text-neutral-500 pl-5">
+                                <p>
+                                    CDN is not meant for production, but it indeed is helpful for quickly getting access
+                                    to Tailwind CSS.
+                                </p>
+                                <p>This site is using CDN as well, sorry!</p>
+                            </div>
+
+                        </li>
+                        <li class="mb-3">
+                            And design a set of IDE integration APIs for Tailwind CSS
+                        </li>
+                    </ul>
+
+                    <p>Among the previous projects, i would have absolutely loved to work on-</p>
+                    <ul class="list-disc list-inside pl-10">
+                        <li class="mb-2">
+                            Create a Rust library for extracting utility class names
+                        </li>
+                        <li class="mb-2">
+                            Set up GitHub Actions workflows for compiling our Rust libraries
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interesting Projects you have worked on -->
+        <div class="mt-12">
+            <div>
+                <p class="font-bold text-lg text-blue-500">Interesting projects you&apos;ve worked on,</p>
+                <p class="text-neutral-500">especially things that are relevant to the work we do here</p>
+            </div>
+            <div class="mt-3 border-solid border-l-4 border-blue-500 pl-3">
+                <ul class="">
+                    <li class="mb-3">
+                        <span class="font-bold"># Rust implementation of SF-Cli</span>
+                        <div class="pl-5 pt-3">
+                            <p>SF-cli is an utility from salesforce. It facilitates various interations with salesforce
+                                servers. like- deployment, status check, etc. Cli is based on oclif cli engine &amp;
+                                uses typescript primarily.</p>
+                            <p class="mt-2">The thing is it is quite slow. I'm talking few seconds to load output of
+                                basic --help parameter.</p>
+                            <p class="mt-2">As i was learning rust, i implemented basic functionality of SF-Cli in it.
+                                It does authentication with SF server and can retrieve DB schema. I plan to implement
+                                more feature in it.</p>
+                        </div>
+
+                    </li>
+
+                    <li class="mb-3">
+                        <span class="font-bold"># GitHub CI/CD pipeline</span>
+                        <div class="pl-5 pt-3">
+                            <p>Created GitHub actions for scrcpy, an utility to copy android screen to laptop via ADB
+                            </p>
+                            <p class="mt-2">The builds for various linux distros were outdated. And i wanted to try a
+                                latest feature- ability to use android as webcam</p>
+                            <p class="mt-2">So, i used GitHub actions to build AppImage package of the scrcpy.</p>
+                        </div>
+                    </li>
+
+                    <li class="mb-3">
+                        <span class="font-bold"># Bypass GMail attachment restrictions</span>
+                        <div class="pl-5 pt-3">
+                            <p>GMail up until recently won't let you send .zip files as attachment</p>
+                            <p class="mt-2">I needed to submit an assingment, as there were multiple files i tried to
+                                zip them and send. But it kept on blocking</p>
+                            <p class="mt-2">As this rule seemed arbitrary. So, i created an utility which masks .zip
+                                files such that it bypasses Gmail filters.</p>
+                            <p class="mt-2">I made this issue known to Gmail. They said it is not a security issue.
+                                Later on they removed this restriction altogether.</p>
+                        </div>
+                    </li>
+
+                    <li class="mb-3">
+                        <span class="font-bold"># blenderColabRender, a google colab notebook to render blender files in
+                            google collab</span>
+                        <div class="pl-5 pt-3">
+                            <p class="mt-2">I studied design in college but become a self-taught developer later on. So,
+                                during college my friend's final project was this huge blender file.</p>
+                            <p class="mt-2">That file was taking ages to render on our latops. So, i used google colab.
+                                It used to give decent enough GPUs too at that time.</p>
+                            <p class="mt-2">On UI, you can select which camera and frames to render. so with one google
+                                account you can render 1-20 frames, and using another 20-40 frames. So with 4-5 google
+                                accounts you can get these heavy files rendered in reasonable times. Still 4-5 days
+                                though.</p>
+                        </div>
+                    </li>
+
+                    <li class="mb-3">
+                        <span>...plus there is lot more interesting tools and utilities i keep on making. I would love
+                            to talk about them with you.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Open-source contributions -->
+        <div class="mt-12">
+            <div>
+                <p class="font-bold text-lg text-blue-500">Open-source contributions,</p>
+                <p class="text-neutral-500">whether it&apos;s your own project, a pull request you&apos;re proud of, or
+                    a well-written bug report you filed</p>
+            </div>
+            <div class="mt-3 border-solid border-l-4 border-blue-500 pl-3">
+                <ul class="">
+                    <li class="mb-3">
+                        <span class="font-bold"># Waydroid</span>
+                        <div class="pl-5 pt-3">
+                            <p>waydroid allows running android apps on linux distros</p>
+                            <p class="mt-2">At time it was launched, the installation process was manual. </p>
+                            <p class="mt-2">So, i created a bash script to automate the installation.</p>
+                            <p class="mt-2">It was featured on offical project website</p>
+                            <p class="mt-2">I also contributed in adding a progress bar to large downloads. As without
+                                progress bar, it was unclear whether download is still going on or failed.</p>
+                            <p class="mt-2">Also contributed to kill childern after parent has died</p>
+                            <p class="mt-2">Was also active in telegram channels looking for any support i can provide
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="mb-3">
+                        <span class="font-bold"># Scrcpy</span>
+                        <div class="pl-5 pt-3">
+                            <p class="mb-2">As mentioned before, created a GitHub action for building latest packages.
+                            </p>
+                            <p>The PR was not merged, but i think such a pipeline is needed in the project to generate
+                                latest package.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Previous Experience -->
+        <div class="mt-12">
+            <div>
+                <p class="font-bold text-lg text-blue-500">Previous experience,</p>
+                <p class="text-neutral-500">especially any leadership responsibilities you&apos;ve held in other roles</p>
+            </div>
+            <div class="mt-3 border-solid border-l-4 border-blue-500 pl-3">
+                <ul class="">
+                    <li class="mb-3">
+                        I have lead 6 member team of my peers for creating a demo project for hackathon at my current workplace. It was a website featuring airline booking solution. The project secured first place in the hackathon.
+                    </li>
+
+                    <li class="mb-3">
+                        I have ~2 years of web development experience(frontend JS, and backend java like language Apex). We build solutions of healthcare industry on salesforce.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technical writing -->
+        <div class="mt-12">
+            <div>
+                <p class="font-bold text-lg text-blue-500">Technical writing,</p>
+                <p class="text-neutral-500">like blog posts you&apos;ve published or documentation you&apos;ve worked on</p>
+            </div>
+            <div class="mt-3 border-solid border-l-4 border-blue-500 pl-3">
+                <ul class="">
+                    <li class="mb-3">
+                        Here is a blog i wrote- <a  class="no-underline hover:underline" href="https://www.mirketa.com/leverage-salesforce-bookmarklets-to-enhance-the-productivity/" target="_blank">Leverage Salesforce bookmarklets to enhance the productivity</a>
+                    </li>
+
+                    <li class="mb-3">
+                        The readme of the GMail bypass- <a class="no-underline hover:underline" href="https://github.com/aditya24raj/byaar/blob/main/README.md" target="_blank">How to bypass GMail attachment restrictions?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </main>
+</body>
+
+</html>
